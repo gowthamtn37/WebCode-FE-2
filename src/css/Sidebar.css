@@ -1,0 +1,20 @@
+ .SideBar{
+    background-color:beige;
+ }
+.sideButton{
+    height:100px;
+    width: 00vh;
+    display: flex;
+}
+.public{
+    display: flex;
+    align-items: center;
+}
+.collectives{
+    display: flex;
+    align-items: center;
+}
+.teams{
+    display: flex;
+    align-items: center;
+}
