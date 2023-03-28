@@ -5,6 +5,10 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
+
+
+
+
 export function Home({ user }) {
   return (
     <div className="Home">
