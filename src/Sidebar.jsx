@@ -9,7 +9,7 @@ import { Collectives } from "./Collectives";
 import { Teams } from "./Teams";
 import { PageNotFound } from "./PageNotFound";
 import { Login } from "./Login";
-import { Signup } from "./Signup";
+//import { Signup } from "./Signup";
 import { ForgetPassword } from "./ForgetPassword";
 import { VerifyOTP } from "./VerifyOTP";
 
@@ -100,7 +100,7 @@ export function Sidebar() {
           <Route path="/about" element={<About />} />
           <Route path="/product" element={<Product />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          {/* <Route path="/signup" element={<Signup />} /> */}
           <Route path="/forgetPassword" element={<ForgetPassword />} />
           <Route path="/verifyreset" element={<VerifyOTP />} />
         </Routes>
