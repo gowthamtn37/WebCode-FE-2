@@ -5,7 +5,7 @@ import * as yup from "yup";
 import { API } from "./Api";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./CSS/ForgetPassword.css";
+import "./css/ForgetPassword.css";
 
 export function ForgetPassword() {
   const navigate = useNavigate();
