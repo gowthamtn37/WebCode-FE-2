@@ -5,7 +5,7 @@ import * as yup from "yup";
 import { API } from "./Api";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./CSS/VerifyOTP.css";
+import "./css/VerifyOTP.css";
 
 export function VerifyOTP() {
   const formValidationSchema = yup.object({
