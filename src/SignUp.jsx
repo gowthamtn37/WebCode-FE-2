@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./css/Signup.css";
 
-export default function Signup() {
+export default function SignUp() {
   const [Alert1, setAlert1] = useState("false");
   const [Alert2, setAlert2] = useState("false");
   const navigate = useNavigate();
