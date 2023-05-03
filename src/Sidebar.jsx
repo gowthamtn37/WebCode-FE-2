@@ -9,7 +9,6 @@ import { Collectives } from "./Collectives";
 import { Teams } from "./Teams";
 import { PageNotFound } from "./PageNotFound";
 import { Login } from "./Login";
-//import { Signup } from "./Signup";
 import { ForgetPassword } from "./ForgetPassword";
 import { VerifyOTP } from "./VerifyOTP";
 
