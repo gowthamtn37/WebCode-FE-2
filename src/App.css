@@ -1,4 +1,8 @@
-body{
-    margin: 0px;
-    background-color:gray;
+body {
+  margin: 0px;
+  background-color: whitesmoke;
+}
+.App {
+  display: flex;
+  flex-direction: column;
 }

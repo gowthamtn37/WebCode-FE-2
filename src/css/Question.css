@@ -1,0 +1,11 @@
+.screen-container {
+  width: 100%;
+  height: 100vh;
+}
+.question-head {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 5px 40px;
+}

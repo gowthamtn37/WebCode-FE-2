@@ -1,55 +1,98 @@
-import React from "react";
-import Backdrop from "@mui/material/Backdrop";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
-import Fade from "@mui/material/Fade";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import "./css/Login.css";
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+import { Link, useNavigate } from "react-router-dom";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import { useFormik } from "formik";
+import * as yup from "yup";
+import { API } from "./Api";
+import { useState } from "react";
 
 export function Login() {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const navigate = useNavigate();
+  const formValidationSchema = yup.object({
+    username: yup.string().required(),
+    password: yup.string().required(),
+  });
 
+  const { values, touched, errors, handleBlur, handleChange, handleSubmit } =
+    useFormik({
+      initialValues: { username: "", password: "" },
+      validationSchema: formValidationSchema,
+      onSubmit: async (user) => {
+        console.log(user);
+        // login(user);
+        const data = await fetch(`${API}/users/`, {
+          method: "POST",
+          body: JSON.stringify(user),
+          headers: { "Content-Type": "application/json" },
+        });
+
+        if (data.status === 401) {
+          setAlert("true");
+        } else {
+          setAlert("false");
+          const result = await data.json();
+          //console.log(result);
+          localStorage.setItem("token", result.token);
+          navigate("/");
+        }
+      },
+    });
+
+  //const login = async (user) => {
+  // console.log(user);
+  //};
+
+  const [alert, setAlert] = useState();
   return (
-    <div>
-      <Button onClick={handleOpen}>Open modal</Button>
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        slots={{ backdrop: Backdrop }}
-        slotProps={{
-          backdrop: {
-            timeout: 500,
-          },
-        }}
-      >
-        <Fade in={open}>
-          <Box sx={style}>
-            <Typography id="transition-modal-title" variant="h6" component="h2">
-              Text in a modal
-            </Typography>
-            <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </Typography>
-          </Box>
-        </Fade>
-      </Modal>
+    <div className="screen-container">
+      <div className="Login-container">
+        <form onSubmit={handleSubmit} className="login-container">
+          <div className="login-head-container">
+            <h2>Login</h2>
+            {alert === "true" ? (
+              <div>
+                <h2 className="login-head">Invalid Credential</h2>
+              </div>
+            ) : null}
+          </div>
+
+          <div className="login-form">
+            <TextField
+              name="username"
+              label="username"
+              value={values.username}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              variant="outlined"
+              error={touched.username && errors.username}
+              helperText={
+                touched.username && errors.username ? errors.username : null
+              }
+            />
+            <TextField
+              type="password"
+              name="password"
+              label="password"
+              value={values.password}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              variant="outlined"
+              error={touched.password && errors.password}
+              helperText={
+                touched.password && errors.password ? errors.password : null
+              }
+            />
+
+            <Link to="/forgetPassword">Forget Password ?</Link>
+
+            <Button type="submit" variant="contained">
+              Submit
+            </Button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

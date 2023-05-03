@@ -5,14 +5,8 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-export function Home({ user }) {
-  return (
-    <div className="Home">
-      {user.map((usr, index) => (
-        <HomeList key={index} user={usr} />
-      ))}
-    </div>
-  );
+export function Home() {
+  return <div className="Home"></div>;
 }
 
 function HomeList({ user }) {

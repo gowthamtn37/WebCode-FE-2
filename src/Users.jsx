@@ -6,14 +6,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "./css/user.css";
 
-export function Users({ user }) {
-  return (
-    <div className="user">
-      {user.map((usr, index) => (
-        <UsersList key={index} user={usr} />
-      ))}
-    </div>
-  );
+export function Users() {
+  return <div className="user">users</div>;
 }
 
 function UsersList({ user }) {
