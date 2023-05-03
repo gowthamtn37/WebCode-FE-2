@@ -1,6 +1,5 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
 
-import "./css/Sidebar.css";
 import { Home } from "./Home";
 import { Questions } from "./Questions";
 import { Tags } from "./Tags";
@@ -13,6 +12,7 @@ import { Login } from "./Login";
 import { Signup } from "./Signup";
 import { ForgetPassword } from "./ForgetPassword";
 import { VerifyOTP } from "./VerifyOTP";
+import "./css/Sidebar.css";
 
 export function Sidebar() {
   const navigate = useNavigate();
