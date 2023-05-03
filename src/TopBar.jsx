@@ -1,13 +1,8 @@
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import React from "react";
 
 import "./css/Topbar.css";
-import { Login } from "./Login";
-import { Signup } from "./Signup";
-import { ForgetPassword } from "./ForgetPassword";
-import { VerifyOTP } from "./VerifyOTP";
-//import { PageNotFound } from "./PageNotFound";
 
 export function TopBar() {
   const navigate = useNavigate();
@@ -64,7 +59,6 @@ export function TopBar() {
           </Button>
         </div>
       </div>
-      <Routes></Routes>
     </div>
   );
 }
