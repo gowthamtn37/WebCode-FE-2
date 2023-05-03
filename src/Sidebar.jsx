@@ -11,7 +11,7 @@ import { PageNotFound } from "./PageNotFound";
 import { Login } from "./Login";
 import { ForgetPassword } from "./ForgetPassword";
 import { VerifyOTP } from "./VerifyOTP";
-import { Signup } from "./Signup";
+import Signup from "./Signup";
 
 import "./css/Sidebar.css";
 
