@@ -11,6 +11,7 @@ import { PageNotFound } from "./PageNotFound";
 import { Login } from "./Login";
 import { ForgetPassword } from "./ForgetPassword";
 import { VerifyOTP } from "./VerifyOTP";
+import { Signup } from "./Signup";
 
 import "./css/Sidebar.css";
 
@@ -99,7 +100,7 @@ export function Sidebar() {
           <Route path="/about" element={<About />} />
           <Route path="/product" element={<Product />} />
           <Route path="/login" element={<Login />} />
-          {/* <Route path="/signup" element={<Signup />} /> */}
+          <Route path="/signup" element={<Signup />} />
           <Route path="/forgetPassword" element={<ForgetPassword />} />
           <Route path="/verifyreset" element={<VerifyOTP />} />
         </Routes>
