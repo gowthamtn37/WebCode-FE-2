@@ -5,9 +5,25 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "./css/user.css";
+import { useEffect, useState } from "react";
+import { API } from "./Api";
 
 export function Users() {
-  return <div className="user">users</div>;
+  const [userData, setUserData] = useState([]);
+
+  useEffect(() => {
+    fetch(`${API}/users/userdata`)
+      .then((res) => res.json())
+      .then((data) => setUserData(data))
+      .catch((err) => console.log(err));
+  }, []);
+  return (
+    <div className="user">
+      {userData.map((user, _id) => (
+        <UsersList user={user} key={_id} />
+      ))}{" "}
+    </div>
+  );
 }
 
 function UsersList({ user }) {
