@@ -1,4 +1,4 @@
-.screen-container {
+.screen-container-ask {
   width: 100%;
   height: 100vh;
 }
@@ -8,4 +8,12 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 5px 40px;
+}
+.question-box {
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+  height: 150px;
+  width: 100%;
+  align-items: center;
 }
