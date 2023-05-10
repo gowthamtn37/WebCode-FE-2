@@ -16,4 +16,10 @@
   height: 150px;
   width: 100%;
   align-items: center;
+  border-bottom: 1px solid black;
+}
+.questions {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
 }
